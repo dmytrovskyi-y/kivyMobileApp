@@ -1,0 +1,97 @@
+<ItemLabel@Label>:
+
+    font_size: '25sp'
+    halign: 'left'
+    valign: 'middle'
+    text_size: self.size
+
+
+<Container>:
+    rows: 3
+
+    user_data: user_data
+    fifty: fifty
+    one_h: one_hundred
+    two_h: two_hundred
+    three_h: three_hundred
+    four_h: four_hundred
+    five_h: five_hundred
+    result: result
+
+    AnchorLayout:
+        size_hint: 0.1, 0.25
+        TextInput:
+            id: user_data
+            font_size: '45sp'
+            multiline: False
+
+    GridLayout:
+        cols: 2
+
+        BoxLayout:
+            padding: [30, 0, 0, 0]
+            orientation: 'vertical'
+
+            ItemLabel:
+                text: '50'
+
+            ItemLabel:
+                text: '100'
+
+            ItemLabel:
+                text: '250'
+
+            ItemLabel:
+                text: '300'
+
+            ItemLabel:
+                text: '400'
+
+            ItemLabel:
+                text: '500'
+
+            ItemLabel:
+                text: 'Инфо работы программы:'
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [0, 0, 40, 0]
+            ItemLabel:
+                id: fifty
+                text: '0'
+
+            ItemLabel:
+                id: one_hundred
+                text: '0'
+
+            ItemLabel:
+                id: two_hundred
+                text: '0'
+
+            ItemLabel:
+                id: three_hundred
+                text: '0'
+
+            ItemLabel:
+                id: four_hundred
+                text: '0'
+
+            ItemLabel:
+                id: five_hundred
+                text: '0'
+
+            ItemLabel:
+                id: result
+                text: '-'
+
+
+    BoxLayout:
+        size_hint: 0.9, 0.15
+        padding: [20, 10, 20, 10]
+        Button:
+            text: 'Расчет'
+            font_hinting: 'normal'
+
+            on_release:
+                root.calculator()
+
