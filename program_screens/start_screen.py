@@ -23,9 +23,9 @@ class FirstPage(Screen):
             size_hint=[.6, .2]
         )
 
-        greetings = Label(text='Анна привет')
+        # greetings = Label(text='Анна привет')
 
-        but_start = Button(text='Start')
+        but_start = Button(text='Старт')
         but_start.background_color = [0, 146, 23, 0.9]
         but_start.on_press = self.changeScreen
 
@@ -34,7 +34,7 @@ class FirstPage(Screen):
 
         box.add_widget(but_start)
         box.add_widget(but_info)
-        box.add_widget(greetings)
+        # box.add_widget(greetings)
 
         basis.add_widget(box)
 

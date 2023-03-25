@@ -13,6 +13,8 @@ class Manager(ScreenManager):
     def __init__(self, **kwargs):
         super(Manager, self).__init__(** kwargs)
 
+        self.some_value = dict()
+
         self.transition = RiseInTransition()  # анимация при переключении скринов
 
         self.add_widget(FirstPage(name='first'))

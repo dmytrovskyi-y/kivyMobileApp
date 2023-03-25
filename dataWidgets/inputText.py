@@ -12,6 +12,7 @@ class BaseInputWidget(TextInput):
 
         self.focus_flag = 0
         self.multiline = False
+        self._user_text = None
 
         # self.position = 'horizontal'
         self.font_size = '15sp'
@@ -32,24 +33,34 @@ class BaseInputWidget(TextInput):
 
         :param instance:
         :param value:
+        :user_data:
         :return:
         """
 
         if value and self.focus_flag in (0, 2):
+            print("user_txt > ", self._user_text)
+            print('work > if value and self.focus_flag in (0, 2)')
             self.text = ''
             self.focus_flag = 1
 
         else:
+            print("user_txt > ", self._user_text)
+            print('work> else 1')
 
             if self.text and not self.text.isdigit() and self.focus_flag == 1:
+                print('work > self.text and not self.text.isdigit() and self.focus_flag == 1:')
                 self.text = '0'
                 self.focus_flag = 2
                 self.background_color = [255, 0, 0, 0.7]
 
             elif not self.text and self.focus_flag == 1:
+                print('work > elif not self.text and self.focus_flag == 1:')
                 self.text = '0'
                 self.focus_flag = 0
 
             else:
+                print('work> else 2')
                 self.foreground_color = [1, 1, 1, 1]
                 self.background_color = [0, 128, 0, 0.7]
+                self._user_text = int(self.text)
+
