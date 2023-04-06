@@ -1,8 +1,8 @@
 from kivy.uix.screenmanager import ScreenManager, RiseInTransition
 
-from program_screens.result_screen import ShowResult
-from program_screens.start_screen import FirstPage
-from program_screens.second_screen import SecondScreen
+from .result_screen import ShowResult
+from .start_screen import FirstPage
+from .second_screen import SecondScreen
 
 
 class Manager(ScreenManager):
@@ -13,9 +13,8 @@ class Manager(ScreenManager):
     def __init__(self, **kwargs):
         super(Manager, self).__init__(** kwargs)
 
-        self.some_value = dict()
-
-        self.transition = RiseInTransition()  # анимация при переключении скринов
+        self.su = '00000'
+        self.transition = RiseInTransition()  # анимация при переключении экранов
 
         self.add_widget(FirstPage(name='first'))
         self.add_widget(SecondScreen(name='second'))

@@ -27,7 +27,7 @@ class FirstPage(Screen):
 
         but_start = Button(text='Старт')
         but_start.background_color = [0, 146, 23, 0.9]
-        but_start.on_press = self.changeScreen
+        but_start.on_press = self.change_screen
 
         but_info = Button(text='Информация')
         but_info.background_color = [0, 49, 255, 0.9]
@@ -38,5 +38,6 @@ class FirstPage(Screen):
 
         basis.add_widget(box)
 
-    def changeScreen(self) -> None:
+    def change_screen(self) -> None:
+
         self.manager.current = 'second'
